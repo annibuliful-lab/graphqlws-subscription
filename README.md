@@ -9,7 +9,7 @@ import (
 
 	graphql "github.com/graph-gophers/graphql-go"
 	"github.com/graph-gophers/graphql-go/relay"
-	"github.com/annibuliful-lab/graphqlws-subscription/graphqlws"
+	"github.com/annibuliful-lab/graphqlws-subscriptiong/graphqlws"
 )
 
 const schema = `
