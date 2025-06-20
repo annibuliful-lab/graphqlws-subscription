@@ -10,7 +10,6 @@ import (
 
 type gqlResponse struct {
 	Errors     gqlerror.List          `json:"errors,omitempty"`
-	Data       json.RawMessage        `json:"data"`
 	Extensions map[string]interface{} `json:"extensions,omitempty"`
 }
 

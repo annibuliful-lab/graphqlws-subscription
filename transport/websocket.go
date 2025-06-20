@@ -364,17 +364,14 @@ func (c *wsConnection) subscribe(ctx context.Context, msg *message) {
 					c.sendError(msg.id, toGQLError(err))
 					continue
 				}
-				c.sendResponse(msg.id, gqlResponse{
-					Data: jsonPayload,
-				})
+				c.sendResponse(msg.id, jsonPayload)
 			}
 		}
 
-		// complete and context cancel comes from the defer
 	}()
 }
 
-func (c *wsConnection) sendResponse(id string, response gqlResponse) {
+func (c *wsConnection) sendResponse(id string, response []byte) {
 	b, err := json.Marshal(response)
 	if err != nil {
 		panic(err)
